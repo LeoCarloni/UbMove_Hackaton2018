@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="col s12 m7">
+    <nav>
+      <div class="nav-wrapper">
+        <p class="brand-logo">UbMove</p>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a [routerLink]="['/runs']">Home</a></li>
+          <li><a [routerLink]="['/run-create']">Novo Ponto</a></li>
+        </ul>
+      </div>
+    </nav>   
+
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://media.lovemondays.com.br/logos/93b44a/prefeitura-municipal-de-franca-original.png">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h5>Pontos</h5>
+          <table class="striped">
+          <thead>
+            <tr>
+              <th>Local</th>
+              <th>Segurança</th>
+              <th>Iluminação</th>
+              <th>Qualidade da Via</th>
+              <th>Transito</th>
+              <!-- <th>Action</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let run of runs">
+              <td>{{ run.f_title }}</td>
+              <td>{{ run.f_author }}</td>
+              <td>{{ run.f_published_year }}</td>
+              <td>{{ run.f_publisher }}</td>
+              <td>{{ run.f_transito }}</td>
+              <!-- <td><a [routerLink]="['/run-details', run._id]">Show Detail</a></td>-->
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="card-action" align="center">
+          <a>Prefeitura de Franca. Compartilhar e Avançar</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="map" style="padding: 10px 0 0; clear: both">
+        <iframe width="1030" scrolling="no" height="500" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14944.911489207769!2d-47.3855443!3d-20.537855349999997!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1540657806128" allow="geolocation"></iframe>
+    </div>
+
+    
+    <br/><br/>
+    <div align="center">
+      <h3>Heatmap</h3>
+      <img src="https://scontent.fudi1-1.fna.fbcdn.net/v/t1.15752-9/44819248_297693227506298_5238788296326250496_n.png?_nc_cat=102&_nc_ht=scontent.fudi1-1.fna&oh=2f307c5e2181c0ac72b10e048069e4de&oe=5C7DD7FB" alt="Trulli" width="1030" height="800">
+    </div>
+    <br/><br/>
+    <!-- Imgs strava
+    <div align="center">
+      <img src="https://scontent.fudi1-1.fna.fbcdn.net/v/t1.15752-9/44943424_348460929051034_357531928330502144_n.png?_nc_cat=105&_nc_ht=scontent.fudi1-1.fna&oh=ad761bc32c76d914d5524dc5160a89cb&oe=5C42CBDB" alt="Trulli" width="333" height="333">
+
+      <img src="https://scontent.fudi1-1.fna.fbcdn.net/v/l/t1.15752-9/44881101_362175534603685_3383771421304946688_n.png?_nc_cat=108&_nc_ht=scontent.fudi1-1.fna&oh=7ed4cfcaea699025d9392a2f1e678b07&oe=5C812538" alt="Trulli" width="333" height="333">
+
+      <img src="https://scontent.fudi1-2.fna.fbcdn.net/v/t1.15752-9/44848375_207645020172629_3877525672016478208_n.png?_nc_cat=100&_nc_ht=scontent.fudi1-2.fna&oh=c1212b8fffff5dc21ac70856292513c8&oe=5C4A7DAB" alt="Trulli" width="333" height="333">
+    </div>
+  -->
+    <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content">
+          <h5>Pontos sugeridos</h5>
+          <table class="striped">
+          <thead>
+            <tr>
+              <th>Local</th>
+              <th>Segurança</th>
+              <th>Iluminação</th>
+              <th>Qualidade da Via</th>
+              <th>Transito</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let run of runs">
+              <td>{{ run.title }}</td>
+              <td>{{ run.author }}</td>
+              <td>{{ run.published_year }}</td>
+              <td>{{ run.publisher }}</td>
+              <td>{{ run.transito }}</td>
+              <td>{{ run.count }}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

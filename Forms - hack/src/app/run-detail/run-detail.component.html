@@ -1,0 +1,47 @@
+<div class="container">
+  <nav>
+    <div class="nav-wrapper">
+      <p class="brand-logo">Detalhes do ponto</p>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a [routerLink]="['/runs']">Home</a></li>
+        <li><a [routerLink]="['/run-create']">Novo Ponto</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="card horizontal">
+    <div class="card-image">
+      <img src="https://media.lovemondays.com.br/logos/93b44a/prefeitura-municipal-de-franca-original.png">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <dl class="list">
+              <dt>Rua</dt>
+              <dd>{{ run.f_title }}</dd>
+              <dt>Segurança do Local</dt>
+              <dd>{{ run.f_author }}</dd>
+              <dt>Iluminação Pública</dt>
+              <dd>{{ run.f_published_year }}</dd>
+              <dt>Qualidade da Via</dt>
+              <dd>{{ run.f_publisher }}</dd>
+              <dt>Transito</dt>
+              <dd>{{ run.f_transito }}</dd>
+              <dt>Update Date</dt>
+              <dd>{{ run.updated_date | date:'short' }}</dd>
+            </dl>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a [routerLink]="['/run-edit', run._id]" class="btn btn-success">EDIT</a>
+          <button class="btn btn-danger" type="button" (click)="deleteRun(run._id)">DELETE</button>
+        </div>
+      </div>
+      <div class="card-action" align="center">
+        <a>Prefeitura de Franca. Compartilhar e Avançar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  

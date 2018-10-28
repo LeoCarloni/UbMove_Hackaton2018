@@ -1,0 +1,152 @@
+<div class="container">
+  <nav>
+    <div class="nav-wrapper">
+      <p class="brand-logo">Sugerir Novo Ponto</p>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a [routerLink]="['/runs']">Home</a></li>
+        <li><a [routerLink]="['/runs']">Pontos Sugeridos</a></li>
+        <li><a [routerLink]="['/run-create']">Novo Ponto</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="card horizontal">
+    <div class="card-stacked">
+      <form (ngSubmit)="saveRun()" #runForm="ngForm">
+        
+        <h5 align="center"> Informe os dados do local e a sua opinião sobre os criterios avaliados </h5>
+
+        <div class="form-group" align="center">
+          <label for="name">Rua</label>
+          <input type="text" class="form-control" [(ngModel)]="run.title" name="title" required>
+        </div>
+        <!--
+        <div class="form-group" align="center">
+          <label for="name">Qualidade da segurança</label>
+          <input type="text" class="form-control" [(ngModel)]="run.author" name="author" required>
+        </div>
+  -->
+        <div class="form-group" align="center">
+          <label for="name">Segurança do local</label>
+          <!-- <input type="date" class="form-control" [(ngModel)]="book.publisher" name="publisher" required> -->
+          <p>
+            <label>
+              <input type="radio" name="seguranca" value="Péssimo" [(ngModel)]="run.author"  />
+              <span>Péssimo</span>
+            </label>
+            <label>
+              <input type="radio" name="seguranca" value="Ruim" [(ngModel)]="run.author"  />
+              <span>Ruim</span>
+            </label>
+            <label>
+              <input type="radio" name="seguranca" value="Regular" [(ngModel)]="run.author"  />
+              <span>Regular</span>
+            </label>
+            <label>
+              <input type="radio" name="seguranca" value="Bom" [(ngModel)]="run.author"  />
+              <span>Bom</span>
+            </label>
+            <label>
+              <input type="radio" name="seguranca" value="Ótimo" [(ngModel)]="run.author"  />
+              <span>Ótimo</span>
+            </label>
+          </p>
+        </div>
+
+        <div class="form-group" align="center">
+          <label for="name">Qualidade da iluminação pública</label>
+          <!-- <input type="date" class="form-control" [(ngModel)]="book.publisher" name="publisher" required> -->
+          <p>
+            <label>
+              <input type="radio" name="iluminacao" value="Péssimo" [(ngModel)]="run.published_year"  />
+              <span>Péssimo</span>
+            </label>
+            <label>
+              <input type="radio" name="iluminacao" value="Ruim" [(ngModel)]="run.published_year"  />
+              <span>Ruim</span>
+            </label>
+            <label>
+              <input type="radio" name="iluminacao" value="Regular" [(ngModel)]="run.published_year"  />
+              <span>Regular</span>
+            </label>
+            <label>
+              <input type="radio" name="iluminacao" value="Bom" [(ngModel)]="run.published_year"  />
+              <span>Bom</span>
+            </label>
+            <label>
+              <input type="radio" name="iluminacao" value="Ótimo" [(ngModel)]="run.published_year"  />
+              <span>Ótimo</span>
+            </label>
+          </p>
+        </div>
+
+        <div class="form-group" align="center">
+          <label for="name">Qualidade da via</label>
+          <!-- <input type="date" class="form-control" [(ngModel)]="book.publisher" name="publisher" required> -->
+          <p>
+            <label>
+              <input type="radio" name="via" value="Péssimo" [(ngModel)]="run.publisher"  />
+              <span>Péssimo</span>
+            </label>
+            <label>
+              <input type="radio" name="via" value="Ruim" [(ngModel)]="run.publisher"  />
+              <span>Ruim</span>
+            </label>
+            <label>
+              <input type="radio" name="via" value="Regular" [(ngModel)]="run.publisher"  />
+              <span>Regular</span>
+            </label>
+            <label>
+              <input type="radio" name="via" value="Bom" [(ngModel)]="run.publisher"  />
+              <span>Bom</span>
+            </label>
+            <label>
+              <input type="radio" name="via" value="Ótimo" [(ngModel)]="run.publisher"  />
+              <span>Ótimo</span>
+            </label>
+          </p>
+        </div>
+
+        <div class="form-group" align="center">
+          <label for="name">Transito</label>
+          <!-- <input type="date" class="form-control" [(ngModel)]="book.publisher" name="publisher" required> -->
+          <p>
+            <label>
+              <input type="radio" name="transito" value="Fraco" [(ngModel)]="run.transito"  />
+              <span>Fraco</span>
+            </label>
+            <label>
+              <input type="radio" name="transito" value="Moderado" [(ngModel)]="run.transito"  />
+              <span>Moderado</span>
+            </label>
+            <label>
+              <input type="radio" name="transito" value="Intenso" [(ngModel)]="run.transito"  />
+              <span>Intenso</span>
+            </label>
+          </p>
+        </div>
+
+        <!-- Identificação -->
+
+        <h5 align="center"> Agora realize a sua identificação </h5>
+
+        <div class="form-group" align="center">
+          <label for="name">Nome</label>
+          <input type="text" class="form-control" [(ngModel)]="run.isbn" name="title" required>
+        </div>
+        <div class="form-group" align="center">
+          <label for="name">Email</label>
+          <input type="email" class="form-control" [(ngModel)]="run.description" name="title" required>
+        </div>
+
+        <div class="form-group" align="center">
+          <button type="submit" class="btn btn-success" [disabled]="!runForm.form.valid">Save</button>
+        </div>
+      </form>
+      <div class="card-action" align="center">
+          <a>Prefeitura de Franca. Compartilhar e Avançar</a>
+      </div>
+    </div>
+  </div> 
+</div>
+
+  
